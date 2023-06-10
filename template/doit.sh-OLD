@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+# You may need to manually adjust the page ranges in the qpdf command
+# below.
+
+# The YYYYMMDD file was created by the setup.sh process and contains
+# the values for the variables 'year`, `month` and `day`.
+. ./YYYYMMDD
+
+output_pdf=${year}${month}${day}-matins-liturgy.pdf
+
+qpdf --pages \
+     matins.pdf 1-1 \
+     ../template/cu.matinsordinary.pdf 1-3,12-20 \
+     godisthelord-gr.pdf 1 \
+     godisthelord.pdf \
+     apolytikion-gr.pdf \
+     apolytikion.pdf \
+     apolytikion1.pdf \
+     apoltheotokionvm.pdf \
+     matins.pdf 4-5 \
+     kathisma11.pdf \
+     kathisma12.pdf \
+     kathisma13.pdf \
+     kathisma21.pdf \
+     kathisma22.pdf \
+     kathisma23.pdf \
+     ../template/resevlogetaria-en-b.pdf \
+     matins.pdf 8-9 \
+     antiphonsprokeimenon.pdf \
+     matins.pdf 10-11 \
+     katavasies.pdf 1-7 \
+     matins.pdf 12-12 \
+     pregospelhymn.pdf \
+     matins.pdf 13-17 \
+     psa50_mode2-en-b.pdf 5-5 \
+     matins.pdf 18-18 \
+     magnificat.pdf \
+     ode9-katavasia.pdf \
+     matins.pdf 19-21 \
+     eoexaposteilarion.pdf \
+     exaposteilarion1.pdf \
+     matins.pdf 22-22 \
+     lauds01.pdf \
+     matins.pdf 23-23 \
+     lauds1.pdf \
+     lauds2.pdf \
+     matins.pdf 24-26 \
+     eodoxasticon.pdf \
+     laudssuntheotokion.pdf \
+     ../template/Doxology-Green-Book-1977.pdf \
+     ../template/Choir-DL-Book-20220402.pdf 1-11 \
+     liturgy-variable-parts.pdf 3 \
+     apolytikion.pdf \
+     ../template/entrance-hymn.pdf \
+     apolytikion-gr.pdf \
+     apolytikion1.pdf \
+     ../template/church-hymn.pdf \
+     kontakion.pdf \
+     ../template/Choir-DL-Book-20220402.pdf 14-17 \
+     liturgy-variable-parts.pdf 8-9 \
+      ../template/Choir-DL-Book-20220402.pdf 18-19 \
+     liturgy-variable-parts.pdf 10 \
+     ../template/Choir-DL-Book-20220402.pdf 20 \
+     ../template/Cherubic-Hymn-Pl-4th-Herron.pdf 1-z \
+     ../template/Cherubic-Hymn-HTFW-letter.pdf \
+     ../template/Choir-DL-Book-20220402.pdf 21-32 \
+     inyouolady8.pdf \
+     ../template/Choir-DL-Book-20220402.pdf 34-43 \
+     ../template/Polyeleos-135_0.pdf 1-z \
+     ../template/Choir-DL-Book-20220402.pdf 44-z \
+    -- liturgy-variable-parts.pdf ${output_pdf}
+     # ../template/Choir-DL-Book-20220402.pdf 44-48 \
+     # ../template/evlogetaria_GOA.pdf \
+     # ../template/kontakion_GOA.pdf \
+     # ../template/trisagion_GOA.pdf \
+     # ../template/memorial-service.pdf \
+     # ../template/memory_GOA.pdf \
+     # ../template/Choir-DL-Book-20220402.pdf 48-z \
